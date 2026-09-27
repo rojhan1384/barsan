@@ -852,8 +852,6 @@
 
 
 <body>
-
-
 <!-- =========================
      HEADER
 ========================= -->
@@ -885,6 +883,54 @@
       </a>
 
     </nav>
+
+    <!-- MOBILE MENU BUTTON -->
+
+    <button
+      class="menu-btn"
+      onclick="toggleMenu()"
+    >
+      ☰
+    </button>
+
+
+    <!-- MOBILE MENU -->
+
+    <div
+      class="mobile-menu"
+      id="mobileMenu"
+    >
+
+      <a
+        href="#services"
+        onclick="toggleMenu()"
+      >
+        خدمات
+      </a>
+
+      <a
+        href="#why"
+        onclick="toggleMenu()"
+      >
+        چرا بارسان؟
+      </a>
+
+      <a
+        href="#stats"
+        onclick="toggleMenu()"
+      >
+        دستاوردها
+      </a>
+
+      <a
+        href="#contact"
+        onclick="toggleMenu()"
+      >
+        تماس
+      </a>
+
+    </div>
+
 
     <a
       href="#contact"
@@ -1395,7 +1441,17 @@
   تمامی حقوق محفوظ است.
 
 </footer>
+<script>
 
+function toggleMenu() {
+
+  document
+    .getElementById("mobileMenu")
+    .classList.toggle("show");
+
+}
+
+</script>
 
 </body>
 </html>
