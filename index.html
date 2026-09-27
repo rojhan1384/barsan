@@ -1,529 +1,1364 @@
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>بارسان | خدمات حرفه‌ای</title>
+  <title>BARSAN | راهکاری متفاوت برای کسب‌وکار شما</title>
 
-<style>
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-}
+  <meta name="description"
+    content="BARSAN؛ ارائه خدمات حرفه‌ای و راهکارهای اختصاصی برای کسب‌وکارها.">
 
-html{
-  scroll-behavior:smooth;
-}
+  <!-- Luxury Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-body{
-  font-family:Tahoma,Arial,sans-serif;
-  background:#f5f6f8;
-  color:#17202a;
-  line-height:1.8;
-}
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&display=swap"
+    rel="stylesheet">
 
-header{
-  position:fixed;
-  top:0;
-  width:100%;
-  z-index:1000;
-  background:rgba(255,255,255,.94);
-  backdrop-filter:blur(12px);
-  border-bottom:1px solid #eee;
-}
+  <style>
 
-.nav{
-  max-width:1200px;
-  margin:auto;
-  padding:16px 25px;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-}
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-.logo{
-  font-size:28px;
-  font-weight:900;
-  color:#111827;
-}
+    html {
+      scroll-behavior: smooth;
+    }
 
-.logo span{
-  color:#d59b2a;
-}
+    body {
+      font-family: Tahoma, Arial, sans-serif;
+      background: #f6f7f9;
+      color: #12161d;
+      line-height: 1.8;
+    }
 
-nav{
-  display:flex;
-  gap:28px;
-}
+    a {
+      text-decoration: none;
+    }
 
-nav a{
-  color:#333;
-  text-decoration:none;
-  font-size:14px;
-  transition:.3s;
-}
+    .container {
+      width: min(1180px, 92%);
+      margin: auto;
+    }
 
-nav a:hover{
-  color:#d59b2a;
-}
 
-.hero{
-  min-height:100vh;
-  padding:150px 25px 80px;
-  display:flex;
-  align-items:center;
-  background:
-    radial-gradient(circle at 80% 20%,rgba(213,155,42,.18),transparent 30%),
-    linear-gradient(135deg,#0b1018,#172333);
-  color:white;
-}
+    /* =========================
+       HEADER
+    ========================= */
 
-.hero-inner{
-  max-width:1200px;
-  width:100%;
-  margin:auto;
-  display:grid;
-  grid-template-columns:1.1fr .9fr;
-  gap:50px;
-  align-items:center;
-}
+    header {
+      position: fixed;
+      top: 0;
+      right: 0;
+      left: 0;
+      z-index: 1000;
 
-.badge{
-  display:inline-block;
-  padding:7px 16px;
-  border:1px solid rgba(213,155,42,.5);
-  color:#e0ad45;
-  border-radius:50px;
-  font-size:13px;
-  margin-bottom:20px;
-}
+      background: rgba(10, 14, 20, 0.88);
 
-.hero h1{
-  font-size:clamp(42px,7vw,78px);
-  line-height:1.2;
-  margin-bottom:22px;
-}
+      backdrop-filter: blur(16px);
 
-.hero h1 span{
-  color:#d59b2a;
-}
+      border-bottom:
+        1px solid rgba(255, 255, 255, 0.08);
+    }
 
-.hero p{
-  color:#c8ced7;
-  font-size:18px;
-  max-width:650px;
-  margin-bottom:35px;
-}
+    .nav {
+      height: 78px;
 
-.buttons{
-  display:flex;
-  gap:15px;
-  flex-wrap:wrap;
-}
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
 
-.btn{
-  display:inline-block;
-  padding:14px 28px;
-  border-radius:10px;
-  text-decoration:none;
-  font-weight:bold;
-  transition:.3s;
-}
+    .logo {
+      color: white;
+      font-size: 28px;
+      font-weight: 900;
+      letter-spacing: -1px;
+    }
 
-.btn-main{
-  background:#d59b2a;
-  color:#111;
-}
+    .logo span {
+      color: #d6a23a;
+    }
 
-.btn-main:hover{
-  transform:translateY(-3px);
-}
+    nav {
+      display: flex;
+      gap: 30px;
+    }
 
-.btn-outline{
-  border:1px solid #697384;
-  color:white;
-}
+    nav a {
+      color: #dce1e8;
+      font-size: 14px;
+      transition: 0.3s;
+    }
 
-.visual{
-  height:390px;
-  border-radius:30px;
-  background:
-    linear-gradient(145deg,rgba(255,255,255,.08),rgba(255,255,255,.02));
-  border:1px solid rgba(255,255,255,.1);
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  position:relative;
-  overflow:hidden;
-}
+    nav a:hover {
+      color: #d6a23a;
+    }
 
-.visual::before{
-  content:"";
-  width:260px;
-  height:260px;
-  border-radius:50%;
-  background:#d59b2a;
-  opacity:.12;
-  position:absolute;
-}
+    .nav-btn {
+      padding: 10px 20px;
 
-.visual-text{
-  position:relative;
-  text-align:center;
-}
+      border: 1px solid #d6a23a;
 
-.visual-text strong{
-  display:block;
-  font-size:80px;
-  color:#d59b2a;
-}
+      border-radius: 9px;
 
-.visual-text span{
-  color:#d6dae0;
-}
+      color: #d6a23a;
+    }
 
-.section{
-  padding:100px 25px;
-}
 
-.container{
-  max-width:1200px;
-  margin:auto;
-}
+    /* =========================
+       HERO
+    ========================= */
 
-.section-title{
-  text-align:center;
-  margin-bottom:55px;
-}
+    .hero {
+      min-height: 100vh;
 
-.section-title small{
-  color:#d59b2a;
-  font-weight:bold;
-}
+      display: flex;
+      align-items: center;
 
-.section-title h2{
-  font-size:40px;
-  margin-top:8px;
-}
+      position: relative;
 
-.section-title p{
-  color:#737b86;
-  max-width:600px;
-  margin:10px auto;
-}
+      overflow: hidden;
 
-.cards{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:22px;
-}
+      background:
+        radial-gradient(
+          circle at 80% 20%,
+          rgba(214, 162, 58, 0.18),
+          transparent 28%
+        ),
 
-.card{
-  background:white;
-  padding:35px 28px;
-  border-radius:20px;
-  border:1px solid #eee;
-  transition:.3s;
-}
+        radial-gradient(
+          circle at 20% 80%,
+          rgba(30, 80, 120, 0.18),
+          transparent 30%
+        ),
 
-.card:hover{
-  transform:translateY(-7px);
-  box-shadow:0 15px 40px rgba(0,0,0,.08);
-}
+        linear-gradient(
+          135deg,
+          #080b10,
+          #131c28
+        );
 
-.icon{
-  width:55px;
-  height:55px;
-  border-radius:14px;
-  background:#fff5df;
-  color:#d59b2a;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-size:25px;
-  margin-bottom:20px;
-}
+      color: white;
+    }
 
-.card h3{
-  margin-bottom:10px;
-}
+    .hero::after {
+      content: "";
 
-.card p{
-  color:#737b86;
-  font-size:14px;
-}
+      position: absolute;
 
-.about{
-  background:#101720;
-  color:white;
-}
+      width: 450px;
+      height: 450px;
 
-.about-grid{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:60px;
-  align-items:center;
-}
+      border:
+        1px solid rgba(214, 162, 58, 0.12);
 
-.about h2{
-  font-size:40px;
-  margin-bottom:20px;
-}
+      border-radius: 50%;
 
-.about p{
-  color:#b8c0ca;
-}
+      left: -180px;
+      bottom: -200px;
+    }
 
-.stats{
-  display:grid;
-  grid-template-columns:repeat(2,1fr);
-  gap:15px;
-}
+    .hero-content {
+      padding-top: 80px;
 
-.stat{
-  padding:28px;
-  border:1px solid #293440;
-  border-radius:18px;
-  text-align:center;
-}
+      max-width: 760px;
+    }
 
-.stat strong{
-  display:block;
-  color:#d59b2a;
-  font-size:35px;
-}
+    .eyebrow {
+      display: inline-flex;
 
-.contact{
-  text-align:center;
-}
+      align-items: center;
 
-.contact-box{
-  max-width:800px;
-  margin:auto;
-  padding:55px 30px;
-  background:white;
-  border-radius:25px;
-  box-shadow:0 15px 45px rgba(0,0,0,.07);
-}
+      gap: 9px;
 
-.contact-box h2{
-  font-size:35px;
-  margin-bottom:12px;
-}
+      color: #d6a23a;
 
-.contact-box p{
-  color:#737b86;
-  margin-bottom:25px;
-}
+      font-size: 13px;
 
-footer{
-  background:#080c12;
-  color:#8c95a0;
-  text-align:center;
-  padding:30px 20px;
-  font-size:13px;
-}
+      margin-bottom: 22px;
+    }
 
-@media(max-width:800px){
+    .eyebrow i {
+      width: 7px;
+      height: 7px;
 
-  nav{
-    display:none;
-  }
+      background: #d6a23a;
 
-  .hero-inner,
-  .about-grid{
-    grid-template-columns:1fr;
-  }
+      border-radius: 50%;
 
-  .hero{
-    text-align:center;
-  }
+      display: block;
+    }
 
-  .hero p{
-    margin-left:auto;
-    margin-right:auto;
-  }
+    .hero h1 {
+      font-size: clamp(44px, 7vw, 82px);
 
-  .buttons{
-    justify-content:center;
-  }
+      line-height: 1.15;
 
-  .visual{
-    height:280px;
-  }
+      letter-spacing: -2px;
 
-  .cards{
-    grid-template-columns:1fr;
-  }
+      margin-bottom: 25px;
+    }
 
-  .section-title h2,
-  .about h2{
-    font-size:32px;
-  }
-}
-</style>
+    .hero h1 span {
+      color: #d6a23a;
+    }
+
+    .hero p {
+      max-width: 680px;
+
+      color: #aeb7c4;
+
+      font-size: 18px;
+
+      margin-bottom: 35px;
+    }
+
+    .actions {
+      display: flex;
+
+      gap: 14px;
+
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      padding: 14px 27px;
+
+      border-radius: 10px;
+
+      font-weight: bold;
+
+      display: inline-block;
+
+      transition: 0.3s;
+    }
+
+    .btn-primary {
+      background: #d6a23a;
+
+      color: #101318;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-3px);
+
+      box-shadow:
+        0 12px 30px rgba(214, 162, 58, 0.22);
+    }
+
+    .btn-secondary {
+      border: 1px solid #495463;
+
+      color: white;
+    }
+
+    .btn-secondary:hover {
+      border-color: #d6a23a;
+
+      color: #d6a23a;
+    }
+
+
+    /* =========================
+       TRUST
+    ========================= */
+
+    .trust {
+      background: #0c1118;
+
+      border-top:
+        1px solid rgba(255, 255, 255, 0.05);
+
+      border-bottom:
+        1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .trust-grid {
+      display: grid;
+
+      grid-template-columns:
+        repeat(4, 1fr);
+
+      padding: 25px 0;
+
+      text-align: center;
+    }
+
+    .trust-item {
+      color: #aab2bd;
+
+      font-size: 13px;
+
+      border-left:
+        1px solid #252d38;
+    }
+
+    .trust-item:last-child {
+      border-left: 0;
+    }
+
+    .trust-item strong {
+      display: block;
+
+      color: #d6a23a;
+
+      font-size: 22px;
+    }
+
+
+    /* =========================
+       SECTIONS
+    ========================= */
+
+    .section {
+      padding: 105px 0;
+    }
+
+    .section-head {
+      text-align: center;
+
+      max-width: 700px;
+
+      margin:
+        0 auto 55px;
+    }
+
+    .section-head small {
+      color: #c18c28;
+
+      font-weight: bold;
+    }
+
+    .section-head h2 {
+      font-size: 40px;
+
+      margin:
+        8px 0 12px;
+
+      letter-spacing: -1px;
+    }
+
+    .section-head p {
+      color: #727b87;
+    }
+
+
+    /* =========================
+       SERVICES
+    ========================= */
+
+    .services {
+      background: #f6f7f9;
+    }
+
+    .service-grid {
+      display: grid;
+
+      grid-template-columns:
+        repeat(3, 1fr);
+
+      gap: 20px;
+    }
+
+    .service {
+      background: white;
+
+      padding: 35px;
+
+      border-radius: 18px;
+
+      border:
+        1px solid #e9ebee;
+
+      position: relative;
+
+      overflow: hidden;
+
+      transition: 0.35s;
+    }
+
+    .service::before {
+      content: "";
+
+      position: absolute;
+
+      top: 0;
+      right: 0;
+
+      width: 0;
+      height: 3px;
+
+      background: #d6a23a;
+
+      transition: 0.35s;
+    }
+
+    .service:hover {
+      transform: translateY(-8px);
+
+      box-shadow:
+        0 20px 45px rgba(0, 0, 0, 0.08);
+    }
+
+    .service:hover::before {
+      width: 100%;
+    }
+
+    .number {
+      color: #d6a23a;
+
+      font-size: 13px;
+
+      font-weight: bold;
+    }
+
+    .service h3 {
+      margin: 18px 0 10px;
+
+      font-size: 20px;
+    }
+
+    .service p {
+      color: #737b86;
+
+      font-size: 14px;
+    }
+
+
+    /* =========================
+       WHY BARSAN
+    ========================= */
+
+    .why {
+      background: #101720;
+
+      color: white;
+    }
+
+    .why-grid {
+      display: grid;
+
+      grid-template-columns:
+        1fr 1fr;
+
+      gap: 70px;
+
+      align-items: center;
+    }
+
+    .why h2 {
+      font-size: 42px;
+
+      line-height: 1.35;
+
+      margin:
+        10px 0 20px;
+    }
+
+    .why p {
+      color: #aeb7c3;
+    }
+
+    .points {
+      display: grid;
+
+      gap: 16px;
+
+      margin-top: 30px;
+    }
+
+    .point {
+      display: flex;
+
+      gap: 15px;
+
+      align-items: flex-start;
+    }
+
+    .check {
+      min-width: 32px;
+      height: 32px;
+
+      border-radius: 9px;
+
+      background:
+        rgba(214, 162, 58, 0.12);
+
+      color: #d6a23a;
+
+      display: flex;
+
+      justify-content: center;
+
+      align-items: center;
+    }
+
+    .point h4 {
+      margin-bottom: 2px;
+    }
+
+    .point p {
+      font-size: 13px;
+    }
+
+
+    /* =========================
+       BARSAN BRAND VISUAL
+    ========================= */
+
+    .visual {
+      min-height: 430px;
+
+      border-radius: 28px;
+
+      position: relative;
+
+      overflow: hidden;
+
+      border:
+        1px solid rgba(255, 255, 255, 0.08);
+
+      background:
+        linear-gradient(
+          145deg,
+          #182536,
+          #0a0f16
+        );
+    }
+
+    .visual::before,
+    .visual::after {
+      content: "";
+
+      position: absolute;
+
+      border-radius: 50%;
+
+      border:
+        1px solid rgba(214, 162, 58, 0.18);
+    }
+
+    .visual::before {
+      width: 350px;
+      height: 350px;
+
+      top: -100px;
+      right: -100px;
+    }
+
+    .visual::after {
+      width: 250px;
+      height: 250px;
+
+      bottom: -90px;
+      left: -80px;
+    }
+
+    .visual-center {
+      position: absolute;
+
+      inset: 0;
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+      text-align: center;
+    }
+
+    /* BARSAN LOGO */
+
+    .visual-center strong {
+      display: block;
+
+      font-family:
+        'Cinzel',
+        Georgia,
+        serif;
+
+      font-size: 52px;
+
+      font-weight: 700;
+
+      letter-spacing: 8px;
+
+      color: #d6a23a;
+
+      line-height: 1.2;
+
+      text-transform: uppercase;
+
+      text-shadow:
+        0 4px 20px rgba(214, 162, 58, 0.18);
+    }
+
+    .visual-center span {
+      display: block;
+
+      margin-top: 12px;
+
+      color: #b7c0cb;
+
+      font-family:
+        'Cinzel',
+        Georgia,
+        serif;
+
+      font-size: 13px;
+
+      letter-spacing: 5px;
+    }
+
+
+    /* =========================
+       STATS
+    ========================= */
+
+    .stats {
+      background: white;
+    }
+
+    .stats-grid {
+      display: grid;
+
+      grid-template-columns:
+        repeat(4, 1fr);
+
+      gap: 15px;
+    }
+
+    .stat {
+      text-align: center;
+
+      padding: 35px 15px;
+
+      border:
+        1px solid #e7e9ed;
+
+      border-radius: 16px;
+    }
+
+    .stat strong {
+      display: block;
+
+      color: #c18c28;
+
+      font-size: 38px;
+    }
+
+
+    /* =========================
+       CTA
+    ========================= */
+
+    .cta {
+      padding: 100px 0;
+
+      background:
+        linear-gradient(
+          135deg,
+          #111923,
+          #0a0f15
+        );
+
+      color: white;
+
+      text-align: center;
+    }
+
+    .cta h2 {
+      font-size: 42px;
+
+      margin-bottom: 15px;
+    }
+
+    .cta p {
+      color: #adb6c1;
+
+      margin-bottom: 30px;
+    }
+
+
+    /* =========================
+       FOOTER
+    ========================= */
+
+    footer {
+      background: #070a0e;
+
+      color: #7e8792;
+
+      padding: 35px 0;
+
+      text-align: center;
+
+      font-size: 13px;
+    }
+
+    .footer-logo {
+      color: white;
+
+      font-size: 25px;
+
+      font-weight: bold;
+
+      margin-bottom: 8px;
+    }
+
+    .footer-logo span {
+      color: #d6a23a;
+    }
+
+
+    /* =========================
+       MOBILE
+    ========================= */
+
+    @media (max-width: 800px) {
+
+      .nav {
+        height: 70px;
+      }
+
+      nav {
+        display: none;
+      }
+
+      .nav-btn {
+        padding: 8px 14px;
+
+        font-size: 12px;
+      }
+
+      .hero {
+        text-align: center;
+      }
+
+      .hero-content {
+        padding-top: 70px;
+      }
+
+      .hero p {
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .actions {
+        justify-content: center;
+      }
+
+      .trust-grid {
+        grid-template-columns:
+          repeat(2, 1fr);
+
+        gap: 20px;
+      }
+
+      .trust-item {
+        border: 0;
+      }
+
+      .service-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .why-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .visual {
+        min-height: 320px;
+      }
+
+      .visual-center strong {
+        font-size: 40px;
+
+        letter-spacing: 6px;
+      }
+
+      .visual-center span {
+        font-size: 11px;
+
+        letter-spacing: 3px;
+      }
+
+      .stats-grid {
+        grid-template-columns:
+          repeat(2, 1fr);
+      }
+
+      .section-head h2,
+      .why h2,
+      .cta h2 {
+        font-size: 31px;
+      }
+
+      .hero h1 {
+        font-size: 45px;
+      }
+
+      .hero p {
+        font-size: 16px;
+      }
+    }
+
+  </style>
 </head>
+
 
 <body>
 
+
+<!-- =========================
+     HEADER
+========================= -->
+
 <header>
-  <div class="nav">
-    <div class="logo">بار<span>سان</span></div>
+
+  <div class="container nav">
+
+    <div class="logo">
+      بار<span>سان</span>
+    </div>
 
     <nav>
-      <a href="#home">خانه</a>
-      <a href="#services">خدمات</a>
-      <a href="#about">درباره ما</a>
-      <a href="#contact">تماس</a>
+
+      <a href="#services">
+        خدمات
+      </a>
+
+      <a href="#why">
+        چرا بارسان؟
+      </a>
+
+      <a href="#stats">
+        دستاوردها
+      </a>
+
+      <a href="#contact">
+        تماس
+      </a>
+
     </nav>
+
+    <a
+      href="#contact"
+      class="nav-btn"
+    >
+      تماس با ما
+    </a>
+
   </div>
+
 </header>
 
-<section class="hero" id="home">
-  <div class="hero-inner">
 
-    <div>
-      <div class="badge">راهکاری حرفه‌ای برای کسب‌وکار شما</div>
+<!-- =========================
+     HERO
+========================= -->
+
+<section class="hero">
+
+  <div class="container">
+
+    <div class="hero-content">
+
+      <div class="eyebrow">
+
+        <i></i>
+
+        راهکاری حرفه‌ای برای کسب‌وکار شما
+
+      </div>
+
 
       <h1>
-        بارسان؛
-        <span>حرفه‌ای متفاوت</span>
+
+        متفاوت فکر کنید،
+
+        <span>
+          حرفه‌ای عمل کنید.
+        </span>
+
       </h1>
 
+
       <p>
-        ما با ارائه خدمات حرفه‌ای و راهکارهای اختصاصی،
-        مسیر رشد و توسعه کسب‌وکار شما را ساده‌تر می‌کنیم.
+
+        بارسان همراه شماست تا با خدمات حرفه‌ای،
+        راهکارهای کاربردی و تجربه‌ای متفاوت،
+        مسیر رشد کسب‌وکار شما را ساده‌تر کند.
+
       </p>
 
-      <div class="buttons">
-        <a href="#contact" class="btn btn-main">
+
+      <div class="actions">
+
+        <a
+          href="#contact"
+          class="btn btn-primary"
+        >
           شروع همکاری
         </a>
 
-        <a href="#services" class="btn btn-outline">
+
+        <a
+          href="#services"
+          class="btn btn-secondary"
+        >
           مشاهده خدمات
         </a>
-      </div>
-    </div>
 
-    <div class="visual">
-      <div class="visual-text">
-        <strong>بارسان</strong>
-        <span>BARSAN</span>
       </div>
+
     </div>
 
   </div>
+
 </section>
 
-<section class="section" id="services">
+
+<!-- =========================
+     TRUST
+========================= -->
+
+<section class="trust">
+
+  <div class="container trust-grid">
+
+
+    <div class="trust-item">
+
+      <strong>
+        100%
+      </strong>
+
+      تعهد به کیفیت
+
+    </div>
+
+
+    <div class="trust-item">
+
+      <strong>
+        24/7
+      </strong>
+
+      همراهی
+
+    </div>
+
+
+    <div class="trust-item">
+
+      <strong>
+        +10
+      </strong>
+
+      راهکار
+
+    </div>
+
+
+    <div class="trust-item">
+
+      <strong>
+        ∞
+      </strong>
+
+      امکان رشد
+
+    </div>
+
+
+  </div>
+
+</section>
+
+
+<!-- =========================
+     SERVICES
+========================= -->
+
+<section
+  class="section services"
+  id="services"
+>
+
   <div class="container">
 
-    <div class="section-title">
-      <small>خدمات ما</small>
-      <h2>چه کاری برای شما انجام می‌دهیم؟</h2>
-      <p>
-        خدمات متناسب با نیاز شما، با تمرکز روی کیفیت و نتیجه.
-      </p>
-    </div>
 
-    <div class="cards">
+    <div class="section-head">
 
-      <div class="card">
-        <div class="icon">◆</div>
-        <h3>خدمات تخصصی</h3>
-        <p>
-          ارائه خدمات حرفه‌ای با توجه به نیاز و هدف کسب‌وکار شما.
-        </p>
-      </div>
+      <small>
+        خدمات بارسان
+      </small>
 
-      <div class="card">
-        <div class="icon">✓</div>
-        <h3>کیفیت و اعتماد</h3>
-        <p>
-          تلاش برای ایجاد تجربه‌ای مطمئن و رضایت‌بخش برای مشتریان.
-        </p>
-      </div>
-
-      <div class="card">
-        <div class="icon">★</div>
-        <h3>راهکار اختصاصی</h3>
-        <p>
-          طراحی راهکار مناسب برای شرایط و نیازهای متفاوت شما.
-        </p>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<section class="section about" id="about">
-  <div class="container about-grid">
-
-    <div>
-      <small style="color:#d59b2a">درباره بارسان</small>
 
       <h2>
-        یک قدم جلوتر از انتظار
+        راهکارهایی برای یک قدم جلوتر بودن
       </h2>
 
+
       <p>
-        بارسان با هدف ارائه خدمات حرفه‌ای و ایجاد تجربه‌ای متفاوت
-        برای مشتریان شکل گرفته است. تمرکز ما روی کیفیت، اعتماد
-        و ارائه راهکارهای کاربردی است.
+
+        خدمات خود را متناسب با نیاز واقعی مشتری طراحی می‌کنیم.
+
       </p>
+
     </div>
 
-    <div class="stats">
 
-      <div class="stat">
-        <strong>100%</strong>
-        رضایت و کیفیت
+    <div class="service-grid">
+
+
+      <div class="service">
+
+        <span class="number">
+          01
+        </span>
+
+        <h3>
+          خدمات تخصصی
+        </h3>
+
+        <p>
+
+          ارائه خدمات حرفه‌ای با تمرکز بر کیفیت،
+          دقت و رضایت مشتری.
+
+        </p>
+
       </div>
 
-      <div class="stat">
-        <strong>24/7</strong>
-        همراه شما
+
+      <div class="service">
+
+        <span class="number">
+          02
+        </span>
+
+        <h3>
+          راهکار اختصاصی
+        </h3>
+
+        <p>
+
+          هر کسب‌وکار شرایط خودش را دارد؛
+          راهکار مناسب همان شرایط را ارائه می‌کنیم.
+
+        </p>
+
       </div>
 
-      <div class="stat">
-        <strong>+10</strong>
-        راهکار اختصاصی
+
+      <div class="service">
+
+        <span class="number">
+          03
+        </span>
+
+        <h3>
+          پشتیبانی و همراهی
+        </h3>
+
+        <p>
+
+          در مسیر همکاری تنها نیستید و
+          برای رسیدن به نتیجه مطلوب همراه شما هستیم.
+
+        </p>
+
       </div>
 
-      <div class="stat">
-        <strong>∞</strong>
-        مسیر رشد
-      </div>
 
     </div>
 
   </div>
+
 </section>
 
-<section class="section contact" id="contact">
+
+<!-- =========================
+     WHY BARSAN
+========================= -->
+
+<section
+  class="section why"
+  id="why"
+>
+
+  <div class="container why-grid">
+
+
+    <div>
+
+      <small
+        style="color:#d6a23a"
+      >
+        چرا بارسان؟
+      </small>
+
+
+      <h2>
+
+        کیفیت فقط یک شعار نیست؛
+        بخشی از تجربه شماست.
+
+      </h2>
+
+
+      <p>
+
+        هدف بارسان ایجاد یک تجربه حرفه‌ای،
+        ساده و قابل اعتماد برای مشتریان است.
+
+      </p>
+
+
+      <div class="points">
+
+
+        <div class="point">
+
+          <div class="check">
+            ✓
+          </div>
+
+          <div>
+
+            <h4>
+              رویکرد حرفه‌ای
+            </h4>
+
+            <p>
+              تمرکز روی کیفیت و جزئیات.
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <div class="point">
+
+          <div class="check">
+            ✓
+          </div>
+
+          <div>
+
+            <h4>
+              راهکار متناسب
+            </h4>
+
+            <p>
+              بدون نسخه یکسان برای همه.
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <div class="point">
+
+          <div class="check">
+            ✓
+          </div>
+
+          <div>
+
+            <h4>
+              تجربه مشتری
+            </h4>
+
+            <p>
+              ارتباط ساده و شفاف.
+            </p>
+
+          </div>
+
+        </div>
+
+
+      </div>
+
+    </div>
+
+
+    <!-- BARSAN BRAND -->
+
+    <div class="visual">
+
+      <div class="visual-center">
+
+        <div>
+
+          <strong>
+            BARSAN
+          </strong>
+
+          <span>
+            PROFESSIONAL SOLUTIONS
+          </span>
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+  </div>
+
+</section>
+
+
+<!-- =========================
+     STATS
+========================= -->
+
+<section
+  class="section stats"
+  id="stats"
+>
+
   <div class="container">
 
-    <div class="contact-box">
-      <h2>آماده همکاری هستید؟</h2>
 
-      <p>
-        برای دریافت اطلاعات بیشتر با ما در ارتباط باشید.
-      </p>
+    <div class="section-head">
 
-      <a href="tel:+989000000000" class="btn btn-main">
-        تماس با بارسان
-      </a>
+      <small>
+        بارسان در یک نگاه
+      </small>
+
+      <h2>
+        تمرکز روی نتیجه
+      </h2>
+
+    </div>
+
+
+    <div class="stats-grid">
+
+
+      <div class="stat">
+
+        <strong>
+          100%
+        </strong>
+
+        تعهد
+
+      </div>
+
+
+      <div class="stat">
+
+        <strong>
+          24/7
+        </strong>
+
+        پاسخگویی
+
+      </div>
+
+
+      <div class="stat">
+
+        <strong>
+          +10
+        </strong>
+
+        راهکار
+
+      </div>
+
+
+      <div class="stat">
+
+        <strong>
+          ∞
+        </strong>
+
+        فرصت رشد
+
+      </div>
+
+
     </div>
 
   </div>
+
 </section>
 
+
+<!-- =========================
+     CTA
+========================= -->
+
+<section
+  class="cta"
+  id="contact"
+>
+
+  <div class="container">
+
+
+    <h2>
+
+      آماده شروع یک همکاری حرفه‌ای هستید؟
+
+    </h2>
+
+
+    <p>
+
+      برای دریافت اطلاعات بیشتر با ما در ارتباط باشید.
+
+    </p>
+
+
+    <a
+      href="tel:+989000000000"
+      class="btn btn-primary"
+    >
+      تماس با بارسان
+    </a>
+
+
+  </div>
+
+</section>
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
 <footer>
-  © 2026 Barsan — تمامی حقوق محفوظ است.
+
+  <div class="footer-logo">
+
+    بار<span>سان</span>
+
+  </div>
+
+
+  © 2026 Barsan —
+  تمامی حقوق محفوظ است.
+
 </footer>
+
 
 </body>
 </html>
