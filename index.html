@@ -761,20 +761,92 @@
 
     @media (max-width: 800px) {
 
-      .nav {
-        height: 70px;
-      }
+  .nav {
+    height: 70px;
+  }
 
-      nav {
-        display: none;
-      }
+  nav {
+    display: none;
+  }
 
-      .nav-btn {
-        padding: 8px 14px;
+  /* دکمه منوی موبایل */
+  .menu-btn {
+    display: block;
+    position: relative;
+    z-index: 1002;
+  }
 
-        font-size: 12px;
-      }
+  /* دکمه تماس دسکتاپ در موبایل مخفی شود */
+  .nav-btn {
+    display: none;
+  }
 
+  .hero {
+    text-align: center;
+  }
+
+  .hero-content {
+    padding-top: 70px;
+  }
+
+  .hero p {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .actions {
+    justify-content: center;
+  }
+
+  .trust-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  .trust-item {
+    border: 0;
+  }
+
+  .service-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .why-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .visual {
+    min-height: 320px;
+  }
+
+  .visual-center strong {
+    font-size: 40px;
+    letter-spacing: 6px;
+  }
+
+  .visual-center span {
+    font-size: 11px;
+    letter-spacing: 3px;
+  }
+
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .section-head h2,
+  .why h2,
+  .cta h2 {
+    font-size: 31px;
+  }
+
+  .hero h1 {
+    font-size: 45px;
+  }
+
+  .hero p {
+    font-size: 16px;
+  }
+}
       .hero {
         text-align: center;
       }
