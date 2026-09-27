@@ -1010,11 +1010,13 @@
     <!-- MOBILE MENU BUTTON -->
 
     <button
-      class="menu-btn"
-      onclick="toggleMenu()"
-    >
-      ☰
-    </button>
+  class="menu-btn"
+  id="menuButton"
+  onclick="toggleMenu()"
+  aria-label="باز کردن منو"
+>
+  ☰
+</button>
 
 
     <!-- MOBILE MENU -->
@@ -1564,17 +1566,26 @@
   تمامی حقوق محفوظ است.
 
 </footer>
+
 <script>
 
 function toggleMenu() {
 
-  document
-    .getElementById("mobileMenu")
-    .classList.toggle("show");
+  const menu = document.getElementById("mobileMenu");
+  const button = document.getElementById("menuButton");
+
+  menu.classList.toggle("show");
+
+  if (menu.classList.contains("show")) {
+    button.innerHTML = "✕";
+    button.setAttribute("aria-label", "بستن منو");
+  } else {
+    button.innerHTML = "☰";
+    button.setAttribute("aria-label", "باز کردن منو");
+  }
 
 }
 
 </script>
-
 </body>
 </html>
