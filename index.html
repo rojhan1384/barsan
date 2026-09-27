@@ -5,20 +5,26 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>BARSAN | راهکاری متفاوت برای کسب‌وکار شما</title>
+  <title>رسابار | راهکاری متفاوت برای کسب‌وکار شما</title>
 
-  <meta name="description"
-    content="BARSAN؛ ارائه خدمات حرفه‌ای و راهکارهای اختصاصی برای کسب‌وکارها.">
+  <meta
+    name="description"
+    content="رسابار؛ ارائه خدمات حرفه‌ای، راهکارهای اختصاصی و همراهی مطمئن برای رشد کسب‌وکارها."
+  >
 
-  <!-- Luxury Font -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
   <link
     href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&display=swap"
-    rel="stylesheet">
+    rel="stylesheet"
+  >
 
   <style>
+
+    /* =========================
+       RESET
+    ========================= */
 
     * {
       margin: 0;
@@ -32,13 +38,20 @@
 
     body {
       font-family: Tahoma, Arial, sans-serif;
-      background: #f6f7f9;
-      color: #12161d;
-      line-height: 1.8;
+      background: #f5f6f8;
+      color: #151a21;
+      line-height: 1.9;
+      overflow-x: hidden;
     }
 
     a {
       text-decoration: none;
+      color: inherit;
+    }
+
+    button,
+    a {
+      -webkit-tap-highlight-color: transparent;
     }
 
     .container {
@@ -58,12 +71,13 @@
       left: 0;
       z-index: 1000;
 
-      background: rgba(10, 14, 20, 0.88);
+      background: rgba(7, 11, 16, 0.82);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
 
-      backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(255,255,255,0.07);
 
-      border-bottom:
-        1px solid rgba(255, 255, 255, 0.08);
+      transition: 0.3s ease;
     }
 
     .nav {
@@ -75,130 +89,200 @@
     }
 
     .logo {
-      color: white;
-      font-size: 28px;
+      color: #fff;
+      font-size: 29px;
       font-weight: 900;
       letter-spacing: -1px;
+      position: relative;
     }
 
     .logo span {
       color: #d6a23a;
     }
 
+    .logo::after {
+      content: "";
+      position: absolute;
+      right: 0;
+      bottom: -5px;
+
+      width: 0;
+      height: 2px;
+
+      background: #d6a23a;
+
+      transition: 0.4s ease;
+    }
+
+    .logo:hover::after {
+      width: 100%;
+    }
+
     nav {
       display: flex;
+      align-items: center;
       gap: 30px;
     }
 
     nav a {
-      color: #dce1e8;
+      position: relative;
+
+      color: #d7dde5;
       font-size: 14px;
-      transition: 0.3s;
+
+      transition: 0.3s ease;
+    }
+
+    nav a::after {
+      content: "";
+
+      position: absolute;
+
+      right: 0;
+      bottom: -9px;
+
+      width: 0;
+      height: 1px;
+
+      background: #d6a23a;
+
+      transition: 0.3s ease;
     }
 
     nav a:hover {
       color: #d6a23a;
     }
 
+    nav a:hover::after {
+      width: 100%;
+    }
+
     .nav-btn {
       padding: 10px 20px;
 
-      border: 1px solid #d6a23a;
-
-      border-radius: 9px;
+      border: 1px solid rgba(214,162,58,0.8);
+      border-radius: 10px;
 
       color: #d6a23a;
+
+      transition: 0.3s ease;
     }
-.menu-btn {
-  display: none;
-  background: rgba(16, 23, 32, 0.7);
-  border: 1px solid rgba(214, 162, 58, 0.7);
-  color: #d6a23a;
-  border-radius: 10px;
-  font-size: 23px;
-  width: 44px;
-  height: 42px;
-  cursor: pointer;
-  position: relative;
-  z-index: 1002;
-  transition: 0.3s ease;
-}
 
-.menu-btn:hover {
-  background: rgba(214, 162, 58, 0.12);
-  box-shadow: 0 0 20px rgba(214, 162, 58, 0.12);
-}
+    .nav-btn:hover {
+      background: #d6a23a;
+      color: #11151b;
 
-.mobile-menu {
-  visibility: hidden;
-  opacity: 0;
-  transform: translateY(-12px) scale(0.98);
+      box-shadow:
+        0 8px 25px rgba(214,162,58,0.18);
+    }
 
-  position: absolute;
-  top: 82px;
-  right: 4%;
-  left: 4%;
 
-  background: rgba(16, 23, 32, 0.96);
-  backdrop-filter: blur(18px);
+    /* =========================
+       MOBILE MENU
+    ========================= */
 
-  border: 1px solid rgba(214, 162, 58, 0.22);
-  border-radius: 16px;
+    .menu-btn {
+      display: none;
 
-  padding: 10px;
+      width: 44px;
+      height: 42px;
 
-  box-shadow:
-    0 20px 50px rgba(0, 0, 0, 0.45);
+      border-radius: 11px;
 
-  transition:
-    opacity 0.25s ease,
-    transform 0.25s ease,
-    visibility 0.25s ease;
+      background: rgba(18,25,35,0.8);
+      border: 1px solid rgba(214,162,58,0.65);
 
-  z-index: 1001;
-}
+      color: #d6a23a;
 
-.mobile-menu a {
-  display: block;
+      font-size: 22px;
 
-  color: #f2f4f7;
+      cursor: pointer;
 
-  padding: 14px 16px;
+      position: relative;
+      z-index: 1002;
 
-  border-bottom:
-    1px solid rgba(255, 255, 255, 0.06);
+      transition: 0.3s ease;
+    }
 
-  border-radius: 10px;
+    .menu-btn:hover {
+      background: rgba(214,162,58,0.12);
+      box-shadow:
+        0 0 25px rgba(214,162,58,0.12);
+    }
 
-  transition:
-    background 0.2s ease,
-    color 0.2s ease,
-    padding-right 0.2s ease;
-}
+    .mobile-menu {
+      position: absolute;
 
-.mobile-menu a:hover {
-  background: rgba(214, 162, 58, 0.08);
-  color: #d6a23a;
-  padding-right: 21px;
-}
+      top: 82px;
+      right: 4%;
+      left: 4%;
 
-.mobile-menu a:last-child {
-  border-bottom: 0;
-}
+      padding: 10px;
 
-.mobile-menu.show {
-  visibility: visible;
-  opacity: 1;
-  transform: translateY(0) scale(1);
-}
+      background: rgba(12,18,27,0.96);
 
-.mobile-menu a:last-child{
-  border-bottom:0;
-}
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
 
-.mobile-menu.show{
-  display:block;
-}
+      border:
+        1px solid rgba(214,162,58,0.22);
+
+      border-radius: 17px;
+
+      box-shadow:
+        0 25px 60px rgba(0,0,0,0.45);
+
+      visibility: hidden;
+      opacity: 0;
+
+      transform:
+        translateY(-15px)
+        scale(0.97);
+
+      transition:
+        opacity 0.25s ease,
+        transform 0.25s ease,
+        visibility 0.25s ease;
+
+      z-index: 1001;
+    }
+
+    .mobile-menu.show {
+      visibility: visible;
+      opacity: 1;
+
+      transform:
+        translateY(0)
+        scale(1);
+    }
+
+    .mobile-menu a {
+      display: block;
+
+      padding: 14px 16px;
+
+      color: #f1f4f7;
+
+      border-bottom:
+        1px solid rgba(255,255,255,0.06);
+
+      border-radius: 10px;
+
+      transition: 0.2s ease;
+    }
+
+    .mobile-menu a:hover {
+      color: #d6a23a;
+      background: rgba(214,162,58,0.07);
+
+      padding-right: 22px;
+    }
+
+    .mobile-menu a:last-child {
+      border-bottom: 0;
+    }
+
+
     /* =========================
        HERO
     ========================= */
@@ -210,31 +294,54 @@
       align-items: center;
 
       position: relative;
-
       overflow: hidden;
-.hero {
-  isolation: isolate;
-}
+
+      isolation: isolate;
+
       background:
         radial-gradient(
           circle at 80% 20%,
-          rgba(214, 162, 58, 0.18),
-          transparent 28%
+          rgba(214,162,58,0.17),
+          transparent 27%
         ),
 
         radial-gradient(
           circle at 20% 80%,
-          rgba(30, 80, 120, 0.18),
+          rgba(27,76,112,0.18),
           transparent 30%
         ),
 
         linear-gradient(
           135deg,
-          #080b10,
-          #131c28
+          #070a0f,
+          #111a25 55%,
+          #080c12
         );
 
-      color: white;
+      color: #fff;
+    }
+
+    .hero::before {
+      content: "";
+
+      position: absolute;
+
+      width: 520px;
+      height: 520px;
+
+      right: -250px;
+      top: -210px;
+
+      border-radius: 50%;
+
+      border:
+        1px solid rgba(214,162,58,0.13);
+
+      box-shadow:
+        0 0 100px rgba(214,162,58,0.05);
+
+      animation:
+        heroOrb 8s ease-in-out infinite;
     }
 
     .hero::after {
@@ -242,53 +349,70 @@
 
       position: absolute;
 
-      width: 450px;
-      height: 450px;
+      width: 420px;
+      height: 420px;
 
-      border:
-        1px solid rgba(214, 162, 58, 0.12);
+      left: -230px;
+      bottom: -220px;
 
       border-radius: 50%;
 
-      left: -180px;
-      bottom: -200px;
+      border:
+        1px solid rgba(214,162,58,0.09);
+
+      box-shadow:
+        0 0 90px rgba(214,162,58,0.04);
     }
-.hero::before {
-  content: "";
 
-  position: absolute;
+    @keyframes heroOrb {
 
-  width: 320px;
-  height: 320px;
+      0%,100% {
+        transform: scale(1);
+        opacity: 0.55;
+      }
 
-  right: -120px;
-  bottom: -140px;
+      50% {
+        transform: scale(1.08);
+        opacity: 1;
+      }
 
-  border-radius: 50%;
+    }
 
-  border: 1px solid rgba(214, 162, 58, 0.08);
+    .hero-grid {
+      position: relative;
+      z-index: 2;
 
-  box-shadow:
-    0 0 80px rgba(214, 162, 58, 0.04);
+      display: grid;
 
-  animation: heroGlow 7s ease-in-out infinite;
-}
+      grid-template-columns:
+        1.2fr 0.8fr;
 
-@keyframes heroGlow {
-  0%, 100% {
-    transform: scale(1);
-    opacity: 0.6;
-  }
+      align-items: center;
 
-  50% {
-    transform: scale(1.08);
-    opacity: 1;
-  }
-}
+      gap: 60px;
+
+      padding-top: 78px;
+    }
+
     .hero-content {
-      padding-top: 80px;
+      max-width: 720px;
 
-      max-width: 760px;
+      animation:
+        heroIn 1s ease-out both;
+    }
+
+    @keyframes heroIn {
+
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
     }
 
     .eyebrow {
@@ -296,48 +420,63 @@
 
       align-items: center;
 
-      gap: 9px;
+      gap: 10px;
 
       color: #d6a23a;
 
       font-size: 13px;
 
       margin-bottom: 22px;
+
+      animation:
+        fadeUp 0.7s ease-out 0.1s both;
     }
 
     .eyebrow i {
       width: 7px;
       height: 7px;
 
-      background: #d6a23a;
+      display: block;
 
       border-radius: 50%;
 
-      display: block;
+      background: #d6a23a;
+
+      box-shadow:
+        0 0 14px rgba(214,162,58,0.7);
     }
 
     .hero h1 {
-      font-size: clamp(44px, 7vw, 82px);
+      font-size: clamp(44px, 6vw, 78px);
 
-      line-height: 1.15;
+      line-height: 1.16;
 
-      letter-spacing: -2px;
+      letter-spacing: -2.5px;
 
-      margin-bottom: 25px;
+      margin-bottom: 24px;
+
+      animation:
+        fadeUp 0.8s ease-out 0.2s both;
     }
 
     .hero h1 span {
       color: #d6a23a;
+
+      text-shadow:
+        0 0 35px rgba(214,162,58,0.12);
     }
 
     .hero p {
-      max-width: 680px;
+      max-width: 650px;
 
       color: #aeb7c4;
 
-      font-size: 18px;
+      font-size: 17px;
 
-      margin-bottom: 35px;
+      margin-bottom: 34px;
+
+      animation:
+        fadeUp 0.8s ease-out 0.35s both;
     }
 
     .actions {
@@ -346,160 +485,257 @@
       gap: 14px;
 
       flex-wrap: wrap;
+
+      animation:
+        fadeUp 0.8s ease-out 0.5s both;
     }
 
     .btn {
-      padding: 14px 27px;
+      position: relative;
 
-      border-radius: 10px;
+      display: inline-flex;
+
+      align-items: center;
+      justify-content: center;
+
+      min-height: 50px;
+
+      padding: 13px 27px;
+
+      border-radius: 11px;
 
       font-weight: bold;
 
-      display: inline-block;
+      overflow: hidden;
 
-      transition: 0.3s;
+      transition: 0.3s ease;
     }
 
     .btn-primary {
-  background: linear-gradient(
-    135deg,
-    #e1b34f,
-    #c18c28
-  );
+      background:
+        linear-gradient(
+          135deg,
+          #e4b853,
+          #c18c28
+        );
 
-  color: #101318;
-
-  box-shadow:
-    0 8px 25px rgba(214, 162, 58, 0.16);
-
-  position: relative;
-  overflow: hidden;
-}
-
-.btn-primary::before {
-  content: "";
-
-  position: absolute;
-
-  top: 0;
-  left: -100%;
-
-  width: 100%;
-  height: 100%;
-
-  background: linear-gradient(
-    90deg,
-    transparent,
-    rgba(255,255,255,0.35),
-    transparent
-  );
-
-  transition: 0.6s;
-}
-
-.btn-primary:hover::before {
-  left: 100%;
-}
-
-.btn-primary:hover {
-  transform: translateY(-3px);
-
-  box-shadow:
-    0 14px 35px rgba(214, 162, 58, 0.28);
-}
-
-    .btn-primary:hover {
-      transform: translateY(-3px);
+      color: #101318;
 
       box-shadow:
-        0 12px 30px rgba(214, 162, 58, 0.22);
+        0 10px 30px rgba(214,162,58,0.18);
+    }
+
+    .btn-primary::before {
+      content: "";
+
+      position: absolute;
+
+      top: 0;
+      left: -120%;
+
+      width: 100%;
+      height: 100%;
+
+      background:
+        linear-gradient(
+          90deg,
+          transparent,
+          rgba(255,255,255,0.38),
+          transparent
+        );
+
+      transition: 0.65s ease;
+    }
+
+    .btn-primary:hover::before {
+      left: 120%;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-4px);
+
+      box-shadow:
+        0 16px 40px rgba(214,162,58,0.28);
     }
 
     .btn-secondary {
-      border: 1px solid #495463;
+      color: #fff;
 
-      color: white;
+      border:
+        1px solid rgba(255,255,255,0.22);
+
+      background:
+        rgba(255,255,255,0.025);
     }
 
     .btn-secondary:hover {
       border-color: #d6a23a;
 
       color: #d6a23a;
+
+      background:
+        rgba(214,162,58,0.05);
+
+      transform: translateY(-3px);
     }
 
-/* =========================
-   HERO ANIMATION
-========================= */
+    /* HERO BRAND */
 
-.hero-content {
-  animation: heroContentIn 1s ease-out both;
-}
+    .hero-brand {
+      position: relative;
 
-@keyframes heroContentIn {
-  from {
-    opacity: 0;
-    transform: translateY(28px);
-  }
+      min-height: 360px;
 
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
+      display: flex;
 
-.eyebrow {
-  animation: fadeUp 0.7s ease-out 0.1s both;
-}
+      align-items: center;
+      justify-content: center;
+    }
 
-.hero h1 {
-  animation: fadeUp 0.8s ease-out 0.2s both;
-}
+    .hero-brand::before {
+      content: "";
 
-.hero p {
-  animation: fadeUp 0.8s ease-out 0.35s both;
-}
+      position: absolute;
 
-.actions {
-  animation: fadeUp 0.8s ease-out 0.5s both;
-}
+      width: 290px;
+      height: 290px;
 
-@keyframes fadeUp {
-  from {
-    opacity: 0;
-    transform: translateY(18px);
-  }
+      border-radius: 50%;
 
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
+      border:
+        1px solid rgba(214,162,58,0.15);
+
+      box-shadow:
+        0 0 90px rgba(214,162,58,0.06);
+
+      animation:
+        brandPulse 5s ease-in-out infinite;
+    }
+
+    .hero-brand::after {
+      content: "";
+
+      position: absolute;
+
+      width: 210px;
+      height: 210px;
+
+      border-radius: 50%;
+
+      border:
+        1px dashed rgba(214,162,58,0.18);
+
+      animation:
+        brandRotate 22s linear infinite;
+    }
+
+    .brand-inner {
+      position: relative;
+
+      z-index: 2;
+
+      text-align: center;
+    }
+
+    .brand-inner strong {
+      display: block;
+
+      font-family:
+        'Cinzel',
+        Georgia,
+        serif;
+
+      font-size: clamp(45px, 5vw, 68px);
+
+      color: #d6a23a;
+
+      letter-spacing: 7px;
+
+      text-shadow:
+        0 5px 35px rgba(214,162,58,0.18);
+    }
+
+    .brand-inner span {
+      display: block;
+
+      margin-top: 10px;
+
+      color: #aeb7c4;
+
+      font-family:
+        'Cinzel',
+        Georgia,
+        serif;
+
+      font-size: 11px;
+
+      letter-spacing: 4px;
+    }
+
+    @keyframes brandPulse {
+
+      0%,100% {
+        transform: scale(1);
+        opacity: 0.65;
+      }
+
+      50% {
+        transform: scale(1.06);
+        opacity: 1;
+      }
+
+    }
+
+    @keyframes brandRotate {
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+    @keyframes fadeUp {
+
+      from {
+        opacity: 0;
+        transform: translateY(18px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+    }
+
+
     /* =========================
        TRUST
     ========================= */
 
     .trust {
-      background: #0c1118;
+      position: relative;
+      z-index: 5;
+
+      background: #0b1017;
 
       border-top:
-        1px solid rgba(255, 255, 255, 0.05);
+        1px solid rgba(255,255,255,0.05);
 
       border-bottom:
-        1px solid rgba(255, 255, 255, 0.05);
+        1px solid rgba(255,255,255,0.05);
     }
 
     .trust-grid {
       display: grid;
 
       grid-template-columns:
-        repeat(4, 1fr);
+        repeat(4,1fr);
 
       padding: 25px 0;
-
-      text-align: center;
     }
 
     .trust-item {
+      text-align: center;
+
       color: #aab2bd;
 
       font-size: 13px;
@@ -522,7 +758,7 @@
 
 
     /* =========================
-       SECTIONS
+       GENERAL SECTIONS
     ========================= */
 
     .section {
@@ -530,9 +766,9 @@
     }
 
     .section-head {
-      text-align: center;
+      max-width: 720px;
 
-      max-width: 700px;
+      text-align: center;
 
       margin:
         0 auto 55px;
@@ -547,14 +783,16 @@
     .section-head h2 {
       font-size: 40px;
 
+      line-height: 1.35;
+
       margin:
-        8px 0 12px;
+        8px 0 13px;
 
       letter-spacing: -1px;
     }
 
     .section-head p {
-      color: #727b87;
+      color: #747d88;
     }
 
 
@@ -562,96 +800,196 @@
        SERVICES
     ========================= */
 
+    .services {
+      background: #f5f6f8;
+    }
+
+    .service-grid {
+      display: grid;
+
+      grid-template-columns:
+        repeat(3,1fr);
+
+      gap: 20px;
+    }
+
     .service {
-  background: rgba(255, 255, 255, 0.96);
+      position: relative;
 
-  padding: 35px;
+      overflow: hidden;
 
-  border-radius: 18px;
+      padding: 35px;
 
-  border: 1px solid #e9ebee;
+      min-height: 250px;
 
-  position: relative;
+      background:
+        rgba(255,255,255,0.97);
 
-  overflow: hidden;
+      border:
+        1px solid #e6e9ed;
 
-  transition:
-    transform 0.35s ease,
-    box-shadow 0.35s ease,
-    border-color 0.35s ease;
-}
+      border-radius: 18px;
 
-/* خط طلایی بالای کارت */
-.service::before {
-  content: "";
+      transition:
+        transform 0.35s ease,
+        box-shadow 0.35s ease,
+        border-color 0.35s ease;
+    }
 
-  position: absolute;
+    .service::before {
+      content: "";
 
-  top: 0;
-  right: 0;
+      position: absolute;
 
-  width: 0;
-  height: 3px;
+      top: 0;
+      right: 0;
 
-  background: linear-gradient(
-    90deg,
-    #c18c28,
-    #e1b34f
-  );
+      width: 0;
+      height: 3px;
 
-  transition: width 0.4s ease;
-}
+      background:
+        linear-gradient(
+          90deg,
+          #c18c28,
+          #e3b653
+        );
 
-/* نور ظریف داخل کارت */
-.service::after {
-  content: "";
+      transition: 0.4s ease;
+    }
 
-  position: absolute;
+    .service::after {
+      content: "";
 
-  width: 130px;
-  height: 130px;
+      position: absolute;
 
-  right: -70px;
-  bottom: -70px;
+      width: 150px;
+      height: 150px;
 
-  border-radius: 50%;
+      right: -85px;
+      bottom: -85px;
 
-  background: rgba(214, 162, 58, 0.07);
+      border-radius: 50%;
 
-  transition:
-    transform 0.4s ease,
-    opacity 0.4s ease;
-}
+      background:
+        rgba(214,162,58,0.07);
 
-.service:hover {
-  transform: translateY(-9px);
+      transition:
+        0.45s ease;
+    }
 
-  border-color: rgba(214, 162, 58, 0.35);
+    .service:hover {
+      transform: translateY(-9px);
 
-  box-shadow:
-    0 22px 50px rgba(15, 20, 28, 0.11);
-}
+      border-color:
+        rgba(214,162,58,0.4);
 
-.service:hover::before {
-  width: 100%;
-}
+      box-shadow:
+        0 25px 55px rgba(15,20,28,0.11);
+    }
 
-.service:hover::after {
-  transform: scale(1.5);
-  opacity: 0.7;
-}
+    .service:hover::before {
+      width: 100%;
+    }
+
+    .service:hover::after {
+      transform: scale(1.45);
+
+      opacity: 0.75;
+    }
+
+    .number {
+      display: inline-flex;
+
+      align-items: center;
+
+      gap: 8px;
+
+      color: #c18c28;
+
+      font-size: 13px;
+
+      font-weight: bold;
+
+      letter-spacing: 1px;
+    }
+
+    .number::before {
+      content: "";
+
+      width: 24px;
+      height: 1px;
+
+      background: #d6a23a;
+    }
+
+    .service h3 {
+      position: relative;
+      z-index: 2;
+
+      font-size: 20px;
+
+      margin:
+        18px 0 10px;
+
+      transition: 0.3s ease;
+    }
+
+    .service:hover h3 {
+      color: #b17b20;
+    }
+
+    .service p {
+      position: relative;
+      z-index: 2;
+
+      color: #737c87;
+
+      font-size: 14px;
+
+      line-height: 2;
+    }
+
 
     /* =========================
-       WHY BARSAN
+       WHY
     ========================= */
 
     .why {
-      background: #101720;
+      position: relative;
 
-      color: white;
+      overflow: hidden;
+
+      background:
+        linear-gradient(
+          135deg,
+          #0f161f,
+          #111b27
+        );
+
+      color: #fff;
+    }
+
+    .why::before {
+      content: "";
+
+      position: absolute;
+
+      width: 500px;
+      height: 500px;
+
+      left: -300px;
+      top: -250px;
+
+      border-radius: 50%;
+
+      border:
+        1px solid rgba(214,162,58,0.08);
     }
 
     .why-grid {
+      position: relative;
+      z-index: 2;
+
       display: grid;
 
       grid-template-columns:
@@ -665,13 +1003,13 @@
     .why h2 {
       font-size: 42px;
 
-      line-height: 1.35;
+      line-height: 1.4;
 
       margin:
         10px 0 20px;
     }
 
-    .why p {
+    .why > .container > div:first-child > p {
       color: #aeb7c3;
     }
 
@@ -686,27 +1024,42 @@
     .point {
       display: flex;
 
+      align-items: flex-start;
+
       gap: 15px;
 
-      align-items: flex-start;
+      padding: 13px;
+
+      border-radius: 12px;
+
+      transition: 0.3s ease;
+    }
+
+    .point:hover {
+      background:
+        rgba(255,255,255,0.035);
+
+      transform: translateX(-5px);
     }
 
     .check {
-      min-width: 32px;
-      height: 32px;
+      min-width: 34px;
+      height: 34px;
+
+      display: flex;
+
+      align-items: center;
+      justify-content: center;
 
       border-radius: 9px;
 
       background:
-        rgba(214, 162, 58, 0.12);
+        rgba(214,162,58,0.11);
 
       color: #d6a23a;
 
-      display: flex;
-
-      justify-content: center;
-
-      align-items: center;
+      border:
+        1px solid rgba(214,162,58,0.12);
     }
 
     .point h4 {
@@ -714,32 +1067,39 @@
     }
 
     .point p {
+      color: #8994a1;
+
       font-size: 13px;
     }
 
-
-    /* =========================
-       BARSAN BRAND VISUAL
-    ========================= */
+    /* WHY VISUAL */
 
     .visual {
       min-height: 430px;
-
-      border-radius: 28px;
 
       position: relative;
 
       overflow: hidden;
 
+      display: flex;
+
+      align-items: center;
+      justify-content: center;
+
+      border-radius: 28px;
+
       border:
-        1px solid rgba(255, 255, 255, 0.08);
+        1px solid rgba(255,255,255,0.08);
 
       background:
         linear-gradient(
           145deg,
-          #182536,
-          #0a0f16
+          #192738,
+          #080d14
         );
+
+      box-shadow:
+        inset 0 0 80px rgba(0,0,0,0.12);
     }
 
     .visual::before,
@@ -751,7 +1111,7 @@
       border-radius: 50%;
 
       border:
-        1px solid rgba(214, 162, 58, 0.18);
+        1px solid rgba(214,162,58,0.18);
     }
 
     .visual::before {
@@ -763,28 +1123,20 @@
     }
 
     .visual::after {
-      width: 250px;
-      height: 250px;
+      width: 260px;
+      height: 260px;
 
-      bottom: -90px;
-      left: -80px;
+      bottom: -100px;
+      left: -90px;
     }
 
     .visual-center {
-      position: absolute;
+      position: relative;
 
-      inset: 0;
-
-      display: flex;
-
-      align-items: center;
-
-      justify-content: center;
+      z-index: 2;
 
       text-align: center;
     }
-
-    /* BARSAN LOGO */
 
     .visual-center strong {
       display: block;
@@ -794,20 +1146,14 @@
         Georgia,
         serif;
 
-      font-size: 52px;
-
-      font-weight: 700;
-
-      letter-spacing: 8px;
+      font-size: 55px;
 
       color: #d6a23a;
 
-      line-height: 1.2;
-
-      text-transform: uppercase;
+      letter-spacing: 8px;
 
       text-shadow:
-        0 4px 20px rgba(214, 162, 58, 0.18);
+        0 5px 30px rgba(214,162,58,0.2);
     }
 
     .visual-center span {
@@ -815,16 +1161,16 @@
 
       margin-top: 12px;
 
-      color: #b7c0cb;
+      color: #aeb7c4;
 
       font-family:
         'Cinzel',
         Georgia,
         serif;
 
-      font-size: 13px;
+      font-size: 12px;
 
-      letter-spacing: 5px;
+      letter-spacing: 4px;
     }
 
 
@@ -833,27 +1179,43 @@
     ========================= */
 
     .stats {
-      background: white;
+      background: #fff;
     }
 
     .stats-grid {
       display: grid;
 
       grid-template-columns:
-        repeat(4, 1fr);
+        repeat(4,1fr);
 
       gap: 15px;
     }
 
     .stat {
-      text-align: center;
+      position: relative;
 
       padding: 35px 15px;
 
-      border:
-        1px solid #e7e9ed;
+      text-align: center;
 
-      border-radius: 16px;
+      border:
+        1px solid #e6e9ed;
+
+      border-radius: 17px;
+
+      background: #fff;
+
+      transition: 0.3s ease;
+    }
+
+    .stat:hover {
+      transform: translateY(-6px);
+
+      border-color:
+        rgba(214,162,58,0.35);
+
+      box-shadow:
+        0 15px 35px rgba(15,20,28,0.08);
     }
 
     .stat strong {
@@ -862,6 +1224,10 @@
       color: #c18c28;
 
       font-size: 38px;
+
+      line-height: 1.2;
+
+      margin-bottom: 6px;
     }
 
 
@@ -870,13 +1236,23 @@
     ========================= */
 
     .cta {
-      padding: 100px 0;
+      position: relative;
+
+      overflow: hidden;
+
+      padding: 105px 0;
 
       background:
+        radial-gradient(
+          circle at center,
+          rgba(214,162,58,0.08),
+          transparent 35%
+        ),
+
         linear-gradient(
           135deg,
-          #111923,
-          #0a0f15
+          #101821,
+          #080d13
         );
 
       color: white;
@@ -884,16 +1260,43 @@
       text-align: center;
     }
 
+    .cta::before {
+      content: "";
+
+      position: absolute;
+
+      width: 350px;
+      height: 350px;
+
+      border-radius: 50%;
+
+      border:
+        1px solid rgba(214,162,58,0.08);
+
+      left: -170px;
+      top: -180px;
+    }
+
     .cta h2 {
+      position: relative;
+
       font-size: 42px;
+
+      line-height: 1.4;
 
       margin-bottom: 15px;
     }
 
     .cta p {
+      position: relative;
+
       color: #adb6c1;
 
       margin-bottom: 30px;
+    }
+
+    .cta .btn {
+      position: relative;
     }
 
 
@@ -902,21 +1305,24 @@
     ========================= */
 
     footer {
-      background: #070a0e;
+      background: #06090d;
 
-      color: #7e8792;
+      color: #77818d;
 
-      padding: 35px 0;
+      padding: 38px 0;
 
       text-align: center;
 
       font-size: 13px;
+
+      border-top:
+        1px solid rgba(255,255,255,0.05);
     }
 
     .footer-logo {
-      color: white;
+      color: #fff;
 
-      font-size: 25px;
+      font-size: 26px;
 
       font-weight: bold;
 
@@ -932,100 +1338,32 @@
        MOBILE
     ========================= */
 
-    @media (max-width: 800px) {
+    @media (max-width: 900px) {
 
-  .nav {
-    height: 70px;
-  }
+      nav {
+        display: none;
+      }
 
-  nav {
-    display: none;
-  }
+      .menu-btn {
+        display: block;
+      }
 
-  /* دکمه منوی موبایل */
-  .menu-btn {
-    display: block;
-    position: relative;
-    z-index: 1002;
-  }
+      .nav-btn {
+        display: none;
+      }
 
-  /* دکمه تماس دسکتاپ در موبایل مخفی شود */
-  .nav-btn {
-    display: none;
-  }
+      .hero-grid {
+        grid-template-columns: 1fr;
 
-  .hero {
-    text-align: center;
-  }
-
-  .hero-content {
-    padding-top: 70px;
-  }
-
-  .hero p {
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  .actions {
-    justify-content: center;
-  }
-
-  .trust-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
-  }
-
-  .trust-item {
-    border: 0;
-  }
-
-  .service-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .why-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .visual {
-    min-height: 320px;
-  }
-
-  .visual-center strong {
-    font-size: 40px;
-    letter-spacing: 6px;
-  }
-
-  .visual-center span {
-    font-size: 11px;
-    letter-spacing: 3px;
-  }
-
-  .stats-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .section-head h2,
-  .why h2,
-  .cta h2 {
-    font-size: 31px;
-  }
-
-  .hero h1 {
-    font-size: 45px;
-  }
-
-  .hero p {
-    font-size: 16px;
-  }
-}
-      .hero {
         text-align: center;
+
+        gap: 20px;
+
+        padding-top: 70px;
       }
 
       .hero-content {
-        padding-top: 70px;
+        max-width: 100%;
       }
 
       .hero p {
@@ -1037,15 +1375,22 @@
         justify-content: center;
       }
 
-      .trust-grid {
-        grid-template-columns:
-          repeat(2, 1fr);
-
-        gap: 20px;
+      .hero-brand {
+        min-height: 250px;
       }
 
-      .trust-item {
-        border: 0;
+      .hero-brand::before {
+        width: 220px;
+        height: 220px;
+      }
+
+      .hero-brand::after {
+        width: 165px;
+        height: 165px;
+      }
+
+      .brand-inner strong {
+        font-size: 43px;
       }
 
       .service-grid {
@@ -1054,487 +1399,324 @@
 
       .why-grid {
         grid-template-columns: 1fr;
+
+        gap: 45px;
       }
 
       .visual {
         min-height: 320px;
       }
 
-      .visual-center strong {
-        font-size: 40px;
-
-        letter-spacing: 6px;
-      }
-
-      .visual-center span {
-        font-size: 11px;
-
-        letter-spacing: 3px;
-      }
-
       .stats-grid {
         grid-template-columns:
-          repeat(2, 1fr);
+          repeat(2,1fr);
+      }
+
+    }
+
+
+    @media (max-width: 600px) {
+
+      .nav {
+        height: 70px;
+      }
+
+      .logo {
+        font-size: 25px;
+      }
+
+      .hero {
+        min-height: 720px;
+      }
+
+      .hero h1 {
+        font-size: 43px;
+
+        letter-spacing: -1.5px;
+      }
+
+      .hero p {
+        font-size: 15px;
+
+        line-height: 2;
+      }
+
+      .actions {
+        flex-direction: column;
+
+        align-items: stretch;
+
+        max-width: 300px;
+
+        margin: auto;
+      }
+
+      .btn {
+        width: 100%;
+      }
+
+      .trust-grid {
+        grid-template-columns:
+          repeat(2,1fr);
+
+        gap: 18px;
+
+        padding: 22px 0;
+      }
+
+      .trust-item {
+        border: 0;
+
+        font-size: 12px;
+      }
+
+      .trust-item strong {
+        font-size: 19px;
+      }
+
+      .section {
+        padding: 75px 0;
+      }
+
+      .section-head {
+        margin-bottom: 38px;
       }
 
       .section-head h2,
       .why h2,
       .cta h2 {
-        font-size: 31px;
+        font-size: 29px;
       }
 
-      .hero h1 {
-        font-size: 45px;
+      .section-head p {
+        font-size: 14px;
       }
 
-      .hero p {
-        font-size: 16px;
+      .service {
+        padding: 28px;
+
+        min-height: auto;
       }
+
+      .visual-center strong {
+        font-size: 38px;
+
+        letter-spacing: 5px;
+      }
+
+      .visual-center span {
+        font-size: 9px;
+
+        letter-spacing: 2px;
+      }
+
+      .stats-grid {
+        grid-template-columns:
+          repeat(2,1fr);
+
+        gap: 10px;
+      }
+
+      .stat {
+        padding: 25px 10px;
+
+        font-size: 13px;
+      }
+
+      .stat strong {
+        font-size: 30px;
+      }
+
+      .cta {
+        padding: 75px 0;
+      }
+
+    }
+
+
+    /* =========================
+       REDUCED MOTION
+    ========================= */
+
+    @media (prefers-reduced-motion: reduce) {
+
+      *,
+      *::before,
+      *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+      }
+
     }
 
   </style>
+
 </head>
 
 
 <body>
-<!-- =========================
-     HEADER
-========================= -->
 
-<header>
 
-  <div class="container nav">
+  <!-- =========================
+       HEADER
+  ========================= -->
 
-    <div class="logo">
-      بار<span>سان</span>
-    </div>
+  <header>
 
-    <nav>
+    <div class="container nav">
 
-      <a href="#services">
-        خدمات
+      <a href="#" class="logo">
+        رسا<span>بار</span>
       </a>
 
-      <a href="#why">
-        چرا بارسان؟
-      </a>
+      <nav>
 
-      <a href="#stats">
-        دستاوردها
-      </a>
-
-      <a href="#contact">
-        تماس
-      </a>
-
-    </nav>
-
-    <!-- MOBILE MENU BUTTON -->
-
-    <button
-  class="menu-btn"
-  id="menuButton"
-  onclick="toggleMenu()"
-  aria-label="باز کردن منو"
->
-  ☰
-</button>
-
-
-    <!-- MOBILE MENU -->
-
-    <div
-      class="mobile-menu"
-      id="mobileMenu"
-    >
-
-      <a
-        href="#services"
-        onclick="toggleMenu()"
-      >
-        خدمات
-      </a>
-
-      <a
-        href="#why"
-        onclick="toggleMenu()"
-      >
-        چرا بارسان؟
-      </a>
-
-      <a
-        href="#stats"
-        onclick="toggleMenu()"
-      >
-        دستاوردها
-      </a>
-
-      <a
-        href="#contact"
-        onclick="toggleMenu()"
-      >
-        تماس
-      </a>
-
-    </div>
-
-
-    <a
-      href="#contact"
-      class="nav-btn"
-    >
-      تماس با ما
-    </a>
-
-  </div>
-
-</header>
-
-
-<!-- =========================
-     HERO
-========================= -->
-
-<section class="hero">
-
-  <div class="container">
-
-    <div class="hero-content">
-
-      <div class="eyebrow">
-
-        <i></i>
-
-        راهکاری حرفه‌ای برای کسب‌وکار شما
-
-      </div>
-
-
-      <h1>
-
-        متفاوت فکر کنید،
-
-        <span>
-          حرفه‌ای عمل کنید.
-        </span>
-
-      </h1>
-
-
-      <p>
-
-        بارسان همراه شماست تا با خدمات حرفه‌ای،
-        راهکارهای کاربردی و تجربه‌ای متفاوت،
-        مسیر رشد کسب‌وکار شما را ساده‌تر کند.
-
-      </p>
-
-
-      <div class="actions">
-
-        <a
-          href="#contact"
-          class="btn btn-primary"
-        >
-          شروع همکاری
+        <a href="#services">
+          خدمات
         </a>
 
+        <a href="#why">
+          چرا رسابار؟
+        </a>
+
+        <a href="#stats">
+          دستاوردها
+        </a>
+
+        <a href="#contact">
+          تماس
+        </a>
+
+      </nav>
+
+
+      <button
+        class="menu-btn"
+        id="menuButton"
+        onclick="toggleMenu()"
+        aria-label="باز کردن منو"
+      >
+        ☰
+      </button>
+
+
+      <div
+        class="mobile-menu"
+        id="mobileMenu"
+      >
 
         <a
           href="#services"
-          class="btn btn-secondary"
+          onclick="toggleMenu()"
         >
-          مشاهده خدمات
+          خدمات
+        </a>
+
+        <a
+          href="#why"
+          onclick="toggleMenu()"
+        >
+          چرا رسابار؟
+        </a>
+
+        <a
+          href="#stats"
+          onclick="toggleMenu()"
+        >
+          دستاوردها
+        </a>
+
+        <a
+          href="#contact"
+          onclick="toggleMenu()"
+        >
+          تماس
         </a>
 
       </div>
 
-    </div>
 
-  </div>
-
-</section>
-
-
-<!-- =========================
-     TRUST
-========================= -->
-
-<section class="trust">
-
-  <div class="container trust-grid">
-
-
-    <div class="trust-item">
-
-      <strong>
-        100%
-      </strong>
-
-      تعهد به کیفیت
-
-    </div>
-
-
-    <div class="trust-item">
-
-      <strong>
-        24/7
-      </strong>
-
-      همراهی
-
-    </div>
-
-
-    <div class="trust-item">
-
-      <strong>
-        +10
-      </strong>
-
-      راهکار
-
-    </div>
-
-
-    <div class="trust-item">
-
-      <strong>
-        ∞
-      </strong>
-
-      امکان رشد
-
-    </div>
-
-
-  </div>
-
-</section>
-
-
-<!-- =========================
-     SERVICES
-========================= -->
-
-<section
-  class="section services"
-  id="services"
->
-
-  <div class="container">
-
-
-    <div class="section-head">
-
-      <small>
-        خدمات بارسان
-      </small>
-
-
-      <h2>
-        راهکارهایی برای یک قدم جلوتر بودن
-      </h2>
-
-
-      <p>
-
-        خدمات خود را متناسب با نیاز واقعی مشتری طراحی می‌کنیم.
-
-      </p>
-
-    </div>
-
-
-    <div class="service-grid">
-
-
-      <div class="service">
-
-        <span class="number">
-          01
-        </span>
-
-        <h3>
-          خدمات تخصصی
-        </h3>
-
-        <p>
-
-          ارائه خدمات حرفه‌ای با تمرکز بر کیفیت،
-          دقت و رضایت مشتری.
-
-        </p>
-
-      </div>
-
-
-      <div class="service">
-
-        <span class="number">
-          02
-        </span>
-
-        <h3>
-          راهکار اختصاصی
-        </h3>
-
-        <p>
-
-          هر کسب‌وکار شرایط خودش را دارد؛
-          راهکار مناسب همان شرایط را ارائه می‌کنیم.
-
-        </p>
-
-      </div>
-
-
-      <div class="service">
-
-        <span class="number">
-          03
-        </span>
-
-        <h3>
-          پشتیبانی و همراهی
-        </h3>
-
-        <p>
-
-          در مسیر همکاری تنها نیستید و
-          برای رسیدن به نتیجه مطلوب همراه شما هستیم.
-
-        </p>
-
-      </div>
-
-
-    </div>
-
-  </div>
-
-</section>
-
-
-<!-- =========================
-     WHY BARSAN
-========================= -->
-
-<section
-  class="section why"
-  id="why"
->
-
-  <div class="container why-grid">
-
-
-    <div>
-
-      <small
-        style="color:#d6a23a"
+      <a
+        href="#contact"
+        class="nav-btn"
       >
-        چرا بارسان؟
-      </small>
-
-
-      <h2>
-
-        کیفیت فقط یک شعار نیست؛
-        بخشی از تجربه شماست.
-
-      </h2>
-
-
-      <p>
-
-        هدف بارسان ایجاد یک تجربه حرفه‌ای،
-        ساده و قابل اعتماد برای مشتریان است.
-
-      </p>
-
-
-      <div class="points">
-
-
-        <div class="point">
-
-          <div class="check">
-            ✓
-          </div>
-
-          <div>
-
-            <h4>
-              رویکرد حرفه‌ای
-            </h4>
-
-            <p>
-              تمرکز روی کیفیت و جزئیات.
-            </p>
-
-          </div>
-
-        </div>
-
-
-        <div class="point">
-
-          <div class="check">
-            ✓
-          </div>
-
-          <div>
-
-            <h4>
-              راهکار متناسب
-            </h4>
-
-            <p>
-              بدون نسخه یکسان برای همه.
-            </p>
-
-          </div>
-
-        </div>
-
-
-        <div class="point">
-
-          <div class="check">
-            ✓
-          </div>
-
-          <div>
-
-            <h4>
-              تجربه مشتری
-            </h4>
-
-            <p>
-              ارتباط ساده و شفاف.
-            </p>
-
-          </div>
-
-        </div>
-
-
-      </div>
+        تماس با ما
+      </a>
 
     </div>
 
+  </header>
 
-    <!-- BARSAN BRAND -->
 
-    <div class="visual">
+  <!-- =========================
+       HERO
+  ========================= -->
 
-      <div class="visual-center">
+  <section class="hero">
 
-        <div>
+    <div class="container hero-grid">
+
+
+      <div class="hero-content">
+
+        <div class="eyebrow">
+
+          <i></i>
+
+          راهکاری حرفه‌ای برای کسب‌وکار شما
+
+        </div>
+
+
+        <h1>
+
+          متفاوت فکر کنید،
+
+          <span>
+            حرفه‌ای عمل کنید.
+          </span>
+
+        </h1>
+
+
+        <p>
+
+          رسابار همراه شماست تا با خدمات حرفه‌ای،
+          راهکارهای کاربردی و تجربه‌ای متفاوت،
+          مسیر رشد کسب‌وکار شما را ساده‌تر کند.
+
+        </p>
+
+
+        <div class="actions">
+
+          <a
+            href="#contact"
+            class="btn btn-primary"
+          >
+            شروع همکاری
+          </a>
+
+          <a
+            href="#services"
+            class="btn btn-secondary"
+          >
+            مشاهده خدمات
+          </a>
+
+        </div>
+
+      </div>
+
+
+      <div class="hero-brand">
+
+        <div class="brand-inner">
 
           <strong>
-          BARSAN
+            RESABAR
           </strong>
 
           <span>
@@ -1545,65 +1727,43 @@
 
       </div>
 
-    </div>
-
-
-  </div>
-
-</section>
-
-
-<!-- =========================
-     STATS
-========================= -->
-
-<section
-  class="section stats"
-  id="stats"
->
-
-  <div class="container">
-
-
-    <div class="section-head">
-
-      <small>
-        بارسان در یک نگاه
-      </small>
-
-      <h2>
-        تمرکز روی نتیجه
-      </h2>
 
     </div>
 
+  </section>
 
-    <div class="stats-grid">
 
+  <!-- =========================
+       TRUST
+  ========================= -->
 
-      <div class="stat">
+  <section class="trust">
+
+    <div class="container trust-grid">
+
+      <div class="trust-item">
 
         <strong>
           100%
         </strong>
 
-        تعهد
+        تعهد به کیفیت
 
       </div>
 
 
-      <div class="stat">
+      <div class="trust-item">
 
         <strong>
           24/7
         </strong>
 
-        پاسخگویی
+        همراهی
 
       </div>
 
 
-      <div class="stat">
+      <div class="trust-item">
 
         <strong>
           +10
@@ -1614,100 +1774,469 @@
       </div>
 
 
-      <div class="stat">
+      <div class="trust-item">
 
         <strong>
           ∞
         </strong>
 
-        فرصت رشد
+        امکان رشد
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       SERVICES
+  ========================= -->
+
+  <section
+    class="section services"
+    id="services"
+  >
+
+    <div class="container">
+
+
+      <div class="section-head">
+
+        <small>
+          خدمات رسابار
+        </small>
+
+        <h2>
+          راهکارهایی برای یک قدم جلوتر بودن
+        </h2>
+
+        <p>
+          خدمات خود را متناسب با نیاز واقعی مشتری طراحی می‌کنیم.
+        </p>
+
+      </div>
+
+
+      <div class="service-grid">
+
+
+        <div class="service">
+
+          <span class="number">
+            01
+          </span>
+
+          <h3>
+            خدمات تخصصی
+          </h3>
+
+          <p>
+            ارائه خدمات حرفه‌ای با تمرکز بر کیفیت،
+            دقت و رضایت مشتری.
+          </p>
+
+        </div>
+
+
+        <div class="service">
+
+          <span class="number">
+            02
+          </span>
+
+          <h3>
+            راهکار اختصاصی
+          </h3>
+
+          <p>
+            هر کسب‌وکار شرایط خودش را دارد؛
+            راهکار مناسب همان شرایط را ارائه می‌کنیم.
+          </p>
+
+        </div>
+
+
+        <div class="service">
+
+          <span class="number">
+            03
+          </span>
+
+          <h3>
+            پشتیبانی و همراهی
+          </h3>
+
+          <p>
+            در مسیر همکاری تنها نیستید و
+            برای رسیدن به نتیجه مطلوب همراه شما هستیم.
+          </p>
+
+        </div>
+
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       WHY RESABAR
+  ========================= -->
+
+  <section
+    class="section why"
+    id="why"
+  >
+
+    <div class="container why-grid">
+
+
+      <div>
+
+        <small style="color:#d6a23a;">
+          چرا رسابار؟
+        </small>
+
+
+        <h2>
+          کیفیت فقط یک شعار نیست؛
+          بخشی از تجربه شماست.
+        </h2>
+
+
+        <p>
+          هدف رسابار ایجاد یک تجربه حرفه‌ای،
+          ساده و قابل اعتماد برای مشتریان است.
+        </p>
+
+
+        <div class="points">
+
+
+          <div class="point">
+
+            <div class="check">
+              ✓
+            </div>
+
+            <div>
+
+              <h4>
+                رویکرد حرفه‌ای
+              </h4>
+
+              <p>
+                تمرکز روی کیفیت و جزئیات.
+              </p>
+
+            </div>
+
+          </div>
+
+
+          <div class="point">
+
+            <div class="check">
+              ✓
+            </div>
+
+            <div>
+
+              <h4>
+                راهکار متناسب
+              </h4>
+
+              <p>
+                بدون نسخه یکسان برای همه.
+              </p>
+
+            </div>
+
+          </div>
+
+
+          <div class="point">
+
+            <div class="check">
+              ✓
+            </div>
+
+            <div>
+
+              <h4>
+                تجربه مشتری
+              </h4>
+
+              <p>
+                ارتباط ساده و شفاف.
+              </p>
+
+            </div>
+
+          </div>
+
+
+        </div>
+
+      </div>
+
+
+      <div class="visual">
+
+        <div class="visual-center">
+
+          <strong>
+            RESABAR
+          </strong>
+
+          <span>
+            PROFESSIONAL SOLUTIONS
+          </span>
+
+        </div>
 
       </div>
 
 
     </div>
 
-  </div>
-
-</section>
+  </section>
 
 
-<!-- =========================
-     CTA
-========================= -->
+  <!-- =========================
+       STATS
+  ========================= -->
 
-<section
-  class="cta"
-  id="contact"
->
+  <section
+    class="section stats"
+    id="stats"
+  >
 
-  <div class="container">
-
-
-    <h2>
-
-      آماده شروع یک همکاری حرفه‌ای هستید؟
-
-    </h2>
+    <div class="container">
 
 
-    <p>
+      <div class="section-head">
 
-      برای دریافت اطلاعات بیشتر با ما در ارتباط باشید.
+        <small>
+          رسابار در یک نگاه
+        </small>
 
-    </p>
+        <h2>
+          تمرکز روی نتیجه
+        </h2>
 
-
-    <a
-      href="tel:+989000000000"
-      class="btn btn-primary"
-    >
-      تماس با بارسان
-    </a>
+      </div>
 
 
-  </div>
-
-</section>
+      <div class="stats-grid">
 
 
-<!-- =========================
-     FOOTER
-========================= -->
+        <div class="stat">
 
-<footer>
+          <strong>
+            100%
+          </strong>
 
-  <div class="footer-logo">
+          تعهد
 
-    بار<span>سان</span>
-
-  </div>
+        </div>
 
 
-  © 2026 Barsan —
-  تمامی حقوق محفوظ است.
+        <div class="stat">
 
-</footer>
+          <strong>
+            24/7
+          </strong>
 
-<script>
+          پاسخگویی
 
-function toggleMenu() {
+        </div>
 
-  const menu = document.getElementById("mobileMenu");
-  const button = document.getElementById("menuButton");
 
-  menu.classList.toggle("show");
+        <div class="stat">
 
-  if (menu.classList.contains("show")) {
-    button.innerHTML = "✕";
-    button.setAttribute("aria-label", "بستن منو");
-  } else {
-    button.innerHTML = "☰";
-    button.setAttribute("aria-label", "باز کردن منو");
-  }
+          <strong>
+            +10
+          </strong>
 
-}
+          راهکار
 
-</script>
+        </div>
+
+
+        <div class="stat">
+
+          <strong>
+            ∞
+          </strong>
+
+          فرصت رشد
+
+        </div>
+
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       CTA
+  ========================= -->
+
+  <section
+    class="cta"
+    id="contact"
+  >
+
+    <div class="container">
+
+      <h2>
+        آماده شروع یک همکاری حرفه‌ای هستید؟
+      </h2>
+
+      <p>
+        برای دریافت اطلاعات بیشتر با ما در ارتباط باشید.
+      </p>
+
+      <a
+        href="tel:+989000000000"
+        class="btn btn-primary"
+      >
+        تماس با رسابار
+      </a>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       FOOTER
+  ========================= -->
+
+  <footer>
+
+    <div class="footer-logo">
+
+      رسا<span>بار</span>
+
+    </div>
+
+    © 2026 Resabar —
+    تمامی حقوق محفوظ است.
+
+  </footer>
+
+
+  <!-- =========================
+       JAVASCRIPT
+  ========================= -->
+
+  <script>
+
+    function toggleMenu() {
+
+      const menu =
+        document.getElementById("mobileMenu");
+
+      const button =
+        document.getElementById("menuButton");
+
+      menu.classList.toggle("show");
+
+
+      if (menu.classList.contains("show")) {
+
+        button.innerHTML = "✕";
+
+        button.setAttribute(
+          "aria-label",
+          "بستن منو"
+        );
+
+      } else {
+
+        button.innerHTML = "☰";
+
+        button.setAttribute(
+          "aria-label",
+          "باز کردن منو"
+        );
+
+      }
+
+    }
+
+
+    /* Close mobile menu after clicking outside */
+
+    document.addEventListener(
+      "click",
+      function(event) {
+
+        const menu =
+          document.getElementById("mobileMenu");
+
+        const button =
+          document.getElementById("menuButton");
+
+        if (
+          menu.classList.contains("show") &&
+          !menu.contains(event.target) &&
+          !button.contains(event.target)
+        ) {
+
+          menu.classList.remove("show");
+
+          button.innerHTML = "☰";
+
+          button.setAttribute(
+            "aria-label",
+            "باز کردن منو"
+          );
+
+        }
+
+      }
+    );
+
+
+    /* Close menu when scrolling */
+
+    window.addEventListener(
+      "scroll",
+      function() {
+
+        const menu =
+          document.getElementById("mobileMenu");
+
+        const button =
+          document.getElementById("menuButton");
+
+        if (menu.classList.contains("show")) {
+
+          menu.classList.remove("show");
+
+          button.innerHTML = "☰";
+
+          button.setAttribute(
+            "aria-label",
+            "باز کردن منو"
+          );
+
+        }
+
+      }
+    );
+
+  </script>
+
 </body>
-</html>
+
+  </html>
